@@ -10,7 +10,8 @@ export default function Home() {
   const [path, setPath] = useState({});
 
   async function handleClick() {
-    console.log(JSON.stringify(path, null, 2));
+    // console.log(JSON.stringify(path, null, 2));
+    console.log(path);
 
   }
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        {/*
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -30,6 +32,7 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+        */}
 
         {/* Begin custom additions */}
 
@@ -39,18 +42,24 @@ export default function Home() {
         <VStack spacing={4}>
 
           <HStack>
-            <Select placeholder='Action' onChange={value => { path.action = value; setPath(path) }}>
+            <Select
+              placeholder='Action'
+              onChange={e => { path.action = e.currentTarget.value; setPath(path) }}>
               <option value='send'>Send</option>
               <option value='buy'>Buy</option>
             </Select>
-            <Select placeholder='Object'>
+            <Select
+              placeholder='Object'
+              onChange={e => { path.object = e.currentTarget.value; setPath(path) }}>
               <option value='eth'>ETH</option>
               <option value='matic'>MATIC</option>
             </Select>
             <p>to</p>
-            <Select placeholder='Location'>
-              <option value='polygon'>Polygon Address</option>
-              <option value='eth'>ETH Address</option>
+            <Select
+              placeholder='Location'
+              onChange={e => { path.location = e.currentTarget.value; setPath(path) }}>
+              <option value='polygon_addr'>Polygon Address</option>
+              <option value='eth_addr'>ETH Address</option>
             </Select>
           </HStack>
 
