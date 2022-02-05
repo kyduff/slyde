@@ -1,17 +1,43 @@
 import { Button, HStack, Select, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { getAllGuides } from '../lib/api'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export async function getStaticProps() {
+  const allGuidesData = await getAllGuides([
+    'slug',
+    'action',
+    'object',
+    'location',
+  ])
+
+  return {
+    props: {
+      allGuidesData,
+    }
+  }
+}
+
+export default function Home({ allGuidesData }) {
 
   // record user choice
   const [path, setPath] = useState({});
+  const router = useRouter();
 
   async function handleClick() {
     // console.log(JSON.stringify(path, null, 2));
     console.log(path);
+
+    if (path?.action === undefined
+      || path?.object === undefined
+      || path?.location === undefined) {
+      return;
+    }
+
+    router.push(`/guides/${path.action}-${path.object}-${path.location}`)
 
   }
   return (
@@ -58,8 +84,8 @@ export default function Home() {
             <Select
               placeholder='Location'
               onChange={e => { path.location = e.currentTarget.value; setPath(path) }}>
-              <option value='polygon_addr'>Polygon Address</option>
-              <option value='eth_addr'>ETH Address</option>
+              <option value='polygon'>Polygon Address</option>
+              <option value='ethereum'>ETH Address</option>
             </Select>
           </HStack>
 
@@ -102,16 +128,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        <p>slyde</p>
       </footer>
     </div>
   )
