@@ -158,7 +158,7 @@ export default function App() {
             </Center>
             <ListItem>Buy Matic on polygon network using Ramp.</ListItem>
             <Center>
-              <Button mt={4} colorScheme='teal' margin="20px 0px" onClick={handleRampClick}>Buy Eth with Ramp Instant</Button>
+              <Button mt={4} colorScheme='teal' margin="20px 0px" onClick={handleRampClick}>Buy Matic with Ramp Instant</Button>
             </Center>
             <ListItem>Swap Matic for wrapped Ethereum (wETH) using Quickswap.</ListItem>
             <Center>
