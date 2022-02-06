@@ -5,8 +5,6 @@ object: 'eth'
 location: 'polygon'
 ---
 
-# Sending Ethereum to a Polygon address
-
 1. Go to [Ramp](https://ramp.network/buy/)
 2. Buy MATIC (Polygon on Polygon) tokens
 3. Go to [Quickswap](https://quickswap.exchange/#/swap)
