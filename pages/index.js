@@ -28,13 +28,8 @@ export default function Home({ allGuidesData }) {
 
   // record user choice
   const [path, setPath] = useState({});
-<<<<<<< HEAD
-  // provider connection
-  const { correctNetwork, switchToCorrectNetwork, connected, provider } = useWallet();
-=======
   const router = useRouter();
 
->>>>>>> main
   async function handleClick() {
     // console.log(JSON.stringify(path, null, 2));
     console.log(path);
@@ -57,7 +52,6 @@ export default function Home({ allGuidesData }) {
       </Head>
 
       <main className={styles.main}>
-        <ConnectWallet />
 
         <p className={styles.description}>
           I want to...
