@@ -153,9 +153,7 @@ export default function App() {
         </FormControl>
         <OrderedList>
             <ListItem>Switch your Web3 wallet to Polygon (Matic) chain.</ListItem>
-            <Center>
-              <Button mt={4} colorScheme='teal' margin="20px 0px" onClick={changeToPolygon}>Connect to Polygon network</Button>
-            </Center>
+           
             <ListItem>Buy Matic on polygon network using Ramp.</ListItem>
             <Center>
               <Button mt={4} colorScheme='teal' margin="20px 0px" onClick={handleRampClick}>Buy Eth with Ramp Instant</Button>
