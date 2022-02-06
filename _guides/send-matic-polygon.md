@@ -1,5 +1,5 @@
 ---
-title: 'Sending MATIC to a polygon address'
+title: 'Sending MATIC to a Polygon address'
 action: 'send'
 object: 'matic'
 location: 'polygon'

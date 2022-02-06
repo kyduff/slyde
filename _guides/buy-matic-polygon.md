@@ -1,5 +1,5 @@
 ---
-title: 'Buying MATIC to a polygon address'
+title: 'Buying MATIC to a Polygon address'
 action: 'buy'
 object: 'matic'
 location: 'polygon'

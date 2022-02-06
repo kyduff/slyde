@@ -7,6 +7,7 @@ import { getAllGuides } from '../lib/api'
 import styles from '../styles/Home.module.css'
 import {Provider, NETWORKS} from '@web3-ui/core'
 import { ConnectWallet, useWallet } from '@web3-ui/core';
+import Link from 'next/link'
 
 
 export async function getStaticProps() {
@@ -83,6 +84,10 @@ export default function Home({ allGuidesData }) {
           <Button onClick={handleClick}>
             Go &rarr;
           </Button>
+
+          <Link href="/guides/auto-eth-polygon">
+            Transact ETH on Polygon &rarr;
+          </Link>
         </VStack>
 
       </main>
