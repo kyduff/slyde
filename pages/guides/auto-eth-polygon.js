@@ -47,7 +47,7 @@ export default function App() {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
         params: [{
-            chainId: ChainId.MATIC.toString(16),
+            chainId: '0x' + ChainId.MATIC.toString(16),
         }]
     });
     
