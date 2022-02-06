@@ -5,6 +5,10 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { getAllGuides } from '../lib/api'
 import styles from '../styles/Home.module.css'
+import {Provider, NETWORKS} from '@web3-ui/core'
+import { ConnectWallet, useWallet } from '@web3-ui/core';
+import Link from 'next/link'
+
 
 export async function getStaticProps() {
   const allGuidesData = await getAllGuides([
@@ -49,18 +53,6 @@ export default function Home({ allGuidesData }) {
       </Head>
 
       <main className={styles.main}>
-        {/*
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-        */}
-
-        {/* Begin custom additions */}
 
         <p className={styles.description}>
           I want to...
@@ -92,39 +84,12 @@ export default function Home({ allGuidesData }) {
           <Button onClick={handleClick}>
             Go &rarr;
           </Button>
+
+          <Link href="/guides/auto-eth-polygon">
+            Transact ETH on Polygon &rarr;
+          </Link>
         </VStack>
 
-        {/*
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-         </div>
-         */}
       </main>
 
       <footer className={styles.footer}>

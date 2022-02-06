@@ -10,4 +10,4 @@ location: 'ethereum'
 3. Enter the desired address
 4. Sign transaction
 
-Note: This will be _very_ expensive. Consider using another network like Polygon
+Note: This will be _very_ expensive. We reccomend using another network like Polygon

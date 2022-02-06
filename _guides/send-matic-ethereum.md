@@ -5,4 +5,8 @@ object: 'matic'
 location: 'ethereum'
 ---
 
-TODO
+1. First acquire MATIC on the Ethereum mainnet network
+2. Open your wallet
+3. Click "send"
+4. Enter the receiving address
+5. Sign the transaction
